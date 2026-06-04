@@ -2,7 +2,7 @@
 $servername = "mysql";
 $username = "root";
 $password = "password";
-$database = "webproject" ;
+$database = "webproject" ; 
 
 try {
     $conn = new mysqli($servername, $username, $password, $database);
@@ -16,4 +16,3 @@ try {
 }
 
 return $conn;
-

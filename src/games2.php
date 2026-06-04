@@ -11,15 +11,15 @@
 <body>
   <table>
     <tr>
-      <th>username</th>
-      <th>password</th>
+      <th>Username</th>
+      <th>Password</th>
     </tr>
 
     <?php
     $conn = require_once "partials/dbconnection.php";
-    $platform = "PS4";
 
-    $stmt = $conn->prepare("SELECT * FROM users ");
+    $stmt = $conn->prepare("SELECT * FROM users");
+    
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows === 0)
