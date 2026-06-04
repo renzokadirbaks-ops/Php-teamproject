@@ -18,7 +18,7 @@
       <th>COL 5</th>
       <th>COL 6</th>
       <th>COL 7</th>
-      <th>COL 8</th>
+      <th>Voorraad</th>
       <th>COL 9</th>
       <th>COL 10</th>
       <th>COL 11</th>
