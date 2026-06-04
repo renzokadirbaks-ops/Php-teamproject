@@ -29,7 +29,7 @@
 
     <?php
     $conn = require_once "partials/dbconnection.php";
-    $stmt = $conn->prepare("SELECT * FROM planten WHERE `COL 8` > 0 LIMIT 20;");
+    $stmt = $conn->prepare("SELECT * FROM planten WHERE `voorraad` > 0 LIMIT 20;");
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows === 0)
@@ -44,7 +44,7 @@
       echo "<td>" . $row['COL 5'] . "</td>";
       echo "<td>" . $row['COL 6'] . "</td>";
       echo "<td>" . $row['COL 7'] . "</td>";
-      echo "<td>" . $row['COL 8'] . "</td>";
+      echo "<td>" . $row['voorraad'] . "</td>";
       echo "<td>" . $row['COL 9'] . "</td>";
       echo "<td>" . $row['COL 10'] . "</td>";
       echo "<td>" . $row['COL 11'] . "</td>";
