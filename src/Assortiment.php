@@ -29,7 +29,7 @@
 
     <?php
     $conn = require_once "partials/dbconnection.php";
-    $stmt = $conn->prepare("SELECT * FROM planten WHERE `voorraad` > 0 LIMIT 20;");
+    $stmt = $conn->prepare("SELECT * FROM planten WHERE `Voorraad` > 0 LIMIT 20;");
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows === 0)
@@ -44,11 +44,11 @@
       echo "<td>" . $row['COL 5'] . "</td>";
       echo "<td>" . $row['COL 6'] . "</td>";
       echo "<td>" . $row['COL 7'] . "</td>";
-      echo "<td>" . $row['voorraad'] . "</td>";
+      echo "<td>" . $row['Voorraad'] . "</td>";
       echo "<td>" . $row['COL 9'] . "</td>";
       echo "<td>" . $row['COL 10'] . "</td>";
       echo "<td>" . $row['COL 11'] . "</td>";
-     echo "<td> <img src='plant_images/". $row['COL 12'] . "' width='100' /></td>";
+     echo "<td> <img src= 'images/". $row['COL 12'] . "' width='100' /></td>";
       echo "<td>" . $row['COL 13'] . "</td>";
       echo "<td>" . $row['COL 14'] . "</td>";
       echo "</tr>";
