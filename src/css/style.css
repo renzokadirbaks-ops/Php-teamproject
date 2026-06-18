@@ -1,27 +1,751 @@
-table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: auto;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
-td,
-th {
-  border: 1px solid #ddd;
-  padding: 8px;
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+main {
+    flex: 1;
 }
 
-tr:hover {
-  background-color: #ddd;
+/* HEADER */
+
+.main-header {
+    width: 100%;
+    background-color: #3f5a3c; 
+    text-align: center;
 }
 
-th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04aa6d;
+.header-logo {
+    padding: 25px 0 15px;
+}
+
+.header-logo img {
+    height: 90px;
+    width: auto;
+}
+
+.header-menu {
+    background-color: #2e472a; 
+    padding: 10px 0;
+}
+
+.header-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 12px;
+}
+
+.header-menu span {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.header-divider {
+    height: 28px;
+    background-color: #d9efb7;
+}
+
+@media(max-width:700px){
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        right: 10px;
+        top: 50px;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+.ContactHeader {
+    text-align: center;
+}
+
+/* FOOTER */
+
+.footer-wrapper {
+    background-color: #283F25;
+    min-height: 280px;
+    padding: 10px;        
+    display: flex;
+    align-items: center;        
+}
+
+.footer-content {
+    max-width: 1000px;          
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px 0;            
+}
+
+/* LEFT SIDE */
+.contact-info {
+    color: #e8f4dc;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.contact-info div {
+    display: flex;
+    margin-bottom: 6px;
+}
+
+.contact-label {
+    width: 100px;
+}
+
+.contact-separator {
+    margin: 0 10px;
+}
+
+/* RIGHT SIDE */
+.opening-hours {
+    color: white;
+    text-align: left;
+}
+
+.opening-hours h2 {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.opening-hours p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-top: 6px;
+}
+
+.footer-wrapper p,
+.footer-wrapper h2 {
+    margin: 0;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+    background-image: url("images/tulip.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    color: white;
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.hero-text p {
+    font-size: 18px;
+}
+
+
+/* HIGHLIGHT TEXT */
+
+.highlight-text {
+    background-color: #4b6a46;
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.highlight-text h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin: 0;
+}
+
+
+/* OFFERS SECTION */
+
+.offers-section {
+    background-color: #f4f7e8;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.offer-card {
+    background-color: #eef5d8;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.offer-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.offer-info {
+    padding: 15px;
+}
+
+.offer-info h3 {
+    font-size: 16px;
+    margin: 0 0 5px;
+}
+
+.offer-info p {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* ABOUT SECTION */
+
+.about-section {
+    background-color: #3f5a3c;
+    color: white;
+    display: flex;
+    padding: 80px 60px;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+.about-text h2 {
+    font-size: 38px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 300px;
+    border-radius: 15px;
+}
+/* HEAD */
+.assortiment {
+    padding: 40px;
+    background-color: #f7f9e8;
+
+}
+.assortiment h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.assortiment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+.product {
+    background-color: #dff0c2;
+    border-radius: 15px;
+    text-align: center;
+}
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.product h3 {
+    margin-top: 10px;
+}
+.product p {
+    font-weight: bold;
+}
+.product.featured {
+grid-column: span 2;
+grid-row: span 2;
+}
+.product.featured h3 {
+font-size: 1.4rem;
+}
+
+.product.featured p {
+  font-size: 1.2rem;
+}
+.product.featured img {
+height: 450px;
+}
+
+
+.contact-main {
+    background-color: #05631b;
+    color: white;
+}
+
+.contact-structuur {
+  display: flex;
+  align-items: stretch;
+  max-width: 900px;
+  margin: 80px auto;
+  gap: 50px; 
+}
+
+.contact-links { 
+ 
+    width: 350px;
+}
+
+.contact-rechts {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.contact-rechts textarea {
+flex: 1;    
+}
+
+.contact-rechts textarea,
+.contact-rechts input {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.kop-contact {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 28px;
+}
+
+.verzend-knop {
+  padding: 12px;
+  width: 107%;
+  background-color:rgba(46, 177, 87, 0.422); 
   color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-top: 12px;
+}
+
+
+.plant-card img {
+  width: 100%;
+  height: 200px;        
+  object-fit: cover;    
+  border-radius: 8px;
+
+}
+#assortiment {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.assortiment {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.assortiment h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.assortiment-search {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(160px, auto) minmax(180px, auto) auto;
+  gap: 12px;
+  align-items: center;
+  margin: 0 0 2rem;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d7e8cc;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.assortiment-search input,
+.assortiment-search select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #b7cea8;
+  border-radius: 8px;
+  background: #fff;
+  color: #2e472a;
+  font: inherit;
+  padding: 10px 12px;
+}
+
+.assortiment-search button {
+  min-height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: #2f7a3b;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.assortiment-search button:hover {
+  background: #245f2e;
+}
+
+.no-products-message {
+  margin: 0 0 2rem;
+  text-align: center;
+  color: #45653f;
+  font-weight: 700;
+}
+
+.aanbevolen-planten-title {
+  margin: 0 0 1.5rem;
+  color: #2e472a;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.assortiment-results-wrap {
+  width: 100%;
+  margin: 0 0 2rem;
+  background: #ffffff;
+  border: 1px solid #d7e8cc;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+.assortiment .assortiment-results-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.assortiment .assortiment-results-table th,
+.assortiment .assortiment-results-table td {
+  border: 0;
+  border-bottom: 1px solid #d7e8cc;
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: middle;
+  color: #2e472a;
+  font-size: 0.92rem;
+}
+
+.assortiment .assortiment-results-table th {
+  background: #2f7a3b;
+  color: #ffffff;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.assortiment .assortiment-results-table tr:nth-child(even) td {
+  background: #f4fff6;
+}
+
+.assortiment .assortiment-results-table tr:hover td {
+  background: #eef8e8;
+}
+
+.assortiment .assortiment-results-table img {
+  width: 84px;
+  height: 84px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.assortiment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+
+.product {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+
+.product h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+
+.product p {
+  font-weight: bold;
+  color: #2f7a3b;
+  font-size: 1rem;
+}
+
+
+.product.featured {
+  border: 2px solid #2f7a3b;
+  background: #f4fff6;
+}
+
+.cart-link {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-link-label {
+  display: inline-block;
+  position: relative;
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -11px;
+  right: -14px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #d82e2e;
+  color: #fff;
+  font-size: 11px;
+  line-height: 18px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid #2e472a;
+  display: none;
+}
+
+.add-to-cart-button {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2f7a3b;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+  background: #245f2e;
+}
+
+.cart-page {
+  background: #f7f9e8;
+  padding: 40px 16px 64px;
+}
+
+.cart-panel {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 28px;
+}
+
+.cart-panel h1 {
+  margin-bottom: 6px;
+  color: #2e472a;
+}
+
+.cart-subtitle {
+  color: #5f6f5f;
+  margin-bottom: 22px;
+}
+
+.cart-items {
+  display: grid;
+  gap: 14px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 84px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid #d7e8cc;
+  border-radius: 12px;
+  padding: 10px;
+  background: #f9fff4;
+}
+
+.cart-item img {
+  width: 84px;
+  height: 84px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cart-item-name {
+  font-weight: 700;
+  color: #2e472a;
+  margin-bottom: 4px;
+}
+
+.cart-item-meta {
+  font-size: 14px;
+  color: #42603f;
+}
+
+.remove-item-button,
+.clear-cart-button {
+  border: none;
+  border-radius: 8px;
+  background: #b53a3a;
+  color: #fff;
+  font-weight: 600;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+.remove-item-button:hover,
+.clear-cart-button:hover {
+  background: #922d2d;
+}
+
+.clear-cart-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cart-summary {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#total-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2e472a;
+  margin: 0;
+}
+
+.continue-shopping {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #2f7a3b;
+  font-weight: 700;
+}
+
+.continue-shopping:hover {
+  text-decoration: underline;
+}
+
+.empty-cart {
+  background: #f0f8e7;
+  border: 1px dashed #b7cea8;
+  border-radius: 10px;
+  padding: 16px;
+  color: #45653f;
+  font-weight: 600;
+}
+
+@media (max-width: 680px) {
+
+  .cart-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cart-item img {
+    justify-self: center;
+  }
+
+  .remove-item-button {
+    width: 100%;
+  }
+
+  .assortiment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .assortiment-search {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.offer-card,
+.about-image {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.offer-card:hover,
+.offer-card:focus,
+.about-image:hover,
+.about-image:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  outline: 3px solid #2f7a3b;
+  outline-offset: 3px;
+}
+
+a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
 }

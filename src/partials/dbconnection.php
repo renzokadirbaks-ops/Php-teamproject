@@ -1,17 +1,17 @@
 <?php
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 $servername = "mysql";
-$username = "root";
-$password = "password";
-$database = "webproject" ; 
+$username = "plant_user";
+$password = "plant_password";
+$database = "webproject";
 
 try {
     $conn = new mysqli($servername, $username, $password, $database);
-    if ($conn->connect_error) {
-        error_log($conn->connect_error);
-        exit("Connection DB failed");
-    }
+    $conn->set_charset("utf8mb4");
 } catch (Exception $e) {
-    error_log($e);
+    error_log($e->getMessage());
     exit("Connection DB failed");
 }
 
