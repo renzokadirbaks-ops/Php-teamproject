@@ -1,0 +1,119 @@
+/* Generieke styling voor Circuleather */
+:root {
+    --primary-color: #2e7d32; /* Duurzaam groen */
+    --primary-hover: #1b5e20;
+    --bg-color: #f4f6f8;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 30px;
+}
+
+h2 {
+    color: #1b5e20;
+    margin-bottom: 20px;
+}
+
+/* Navigatie en Bovenbalk */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+/* Knoppen Styling */
+.btn {
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-toevoegen { background-color: #28a745; color: white; }
+.btn-toevoegen:hover { background-color: #218838; }
+
+.btn-bestellingen { background-color: #007bff; color: white; margin-left: 10px; }
+.btn-bestellingen:hover { background-color: #0069d9; }
+
+.btn-terug { background-color: #6c757d; color: white; }
+.btn-terug:hover { background-color: #5a6268; }
+
+.btn-uitloggen { background-color: #dc3545; color: white; }
+.btn-uitloggen:hover { background-color: #c82333; }
+
+.btn-bewerken { background-color: #ffc107; color: #212529; font-size: 13px; padding: 6px 12px; }
+.btn-bewerken:hover { background-color: #e0a800; }
+
+/* Tabellen Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Formulier Cards (voor toevoegen/bewerken) */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}

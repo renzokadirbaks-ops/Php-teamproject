@@ -4,7 +4,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - 80:80
+      - 81:80        # ← was 80, nu 81
     volumes:
       - ./src:/var/www/html/
       - ./php.ini:/usr/local/etc/php/php.ini
@@ -16,17 +16,16 @@ services:
       MYSQL_USER: "student"
       MYSQL_PASSWORD: "veiligwachtwoord"
     volumes:
-      #- mysqldata:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - certs:/ssl
       - mysqlconf:/etc/mysql/conf.d/
     ports:
-      - 3306:3306
+      - 3307:3306    # ← was 3306, nu 3307
 
   phpmyadmin:
     image: phpmyadmin
     ports:
-      - 8080:80
+      - 8081:80      # ← was 8080, nu 8081
     environment:
       PMA_HOST: mysql
 
