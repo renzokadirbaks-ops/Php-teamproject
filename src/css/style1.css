@@ -118,3 +118,24 @@ input:focus, select:focus {
     border-color: var(--primary-color);
     outline: none;
 }
+.btn-koppel {
+    background-color: #27ae60;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.btn-koppel:hover {
+    background-color: #219150;
+}
+
+.badge-gekoppeld {
+    background-color: #95a5a6;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}

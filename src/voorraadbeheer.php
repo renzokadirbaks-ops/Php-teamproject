@@ -12,7 +12,8 @@ if (!isset($_SESSION['ingelogd']) || $_SESSION['ingelogd'] !== true) {
 require_once "partials/database.php";
 
 // SQL-query om alle leerpartijen op te halen, de nieuwste (hoogste ID) eerst
-$sql = "SELECT * FROM voorraadbeheer ORDER BY id DESC";
+// SQL-query om alleen beschikbare en gereserveerde leerpartijen op te halen (verkochte partijen zijn verborgen)
+$sql = "SELECT * FROM voorraadbeheer WHERE status != 'Verkocht' ORDER BY id DESC";
 $result = $conn->query($sql);
 
 $partijen = [];
@@ -123,9 +124,16 @@ if ($result && $result->num_rows > 0) {
                         <td><?= htmlspecialchars($partij['dikte']) ?> mm</td>
                         <td><strong><?= htmlspecialchars($partij['status']) ?></strong></td>
                         <td><?= htmlspecialchars($partij['datum_registratie']) ?></td>
-                        <td>
+                      <td>
                             <a href="partijbewerken.php?id=<?= $partij['id'] ?>" class="btn-bewerken">✏️ Bewerken</a>
+                            
+                            <?php if (empty($partij['bestellingen_id'])): ?>
+                                <a href="koppel_bestelling.php?voorraad_id=<?= $partij['id'] ?>" class="btn-koppel">📦 Bestelling Koppelen</a>
+                            <?php else: ?>
+                                <span class="badge-gekoppeld">Gekoppeld (#<?= htmlspecialchars($partij['bestellingen_id']) ?>)</span>
+                            <?php endif; ?>
                         </td>
+                           
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
